@@ -1,0 +1,38 @@
+// src/components/Bubble/index.module.sass
+@use '../../styles/variables' as v
+
+.Bubble
+  position: absolute
+  background-color: v.$gray
+  padding: 7px
+  border-radius: 6px
+  box-shadow: 0 4px 12px rgba(0,0,0,.15)
+  z-index: 1000
+  font-weight: 600
+  color: v.$secondary
+  white-space: nowrap
+  pointer-events: none
+  transform: translateX(-50%)
+  max-width: 90vw
+  overflow: visible
+
+  &::after
+    content: ''
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    border: 8px solid transparent
+
+  &[data-direction="up"]
+    &::after
+      top: 100%
+      border-top-color: v.$gray
+
+  &[data-direction="down"]
+    &::after
+      bottom: 100%
+      border-bottom-color: v.$gray
+
+  @media (max-width: 768px)
+    white-space: normal
+    text-align: center

@@ -1,0 +1,44 @@
+// C:\MEGA\GPnet\Sistema de Imóveis\src\components\Banner\index.module.sass
+@use '../../styles/variables' as v
+
+.Container
+    padding: 200px 150px
+    position: relative
+    background:
+        size: cover
+        position: center
+        image: url(../../assets/backbone-visuals-oMB1rr7j-H8-unsplash.jpg)
+    &::before
+        background-color: rgba(0, 0, 0, .5)
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 1
+    article
+        width: 55%
+        position: relative
+        z-index: 1
+        h2
+            color: v.$white
+            font:
+                size: 60px
+                weight: 700
+            margin-bottom: 35px
+        p
+            color: v.$white
+            margin-bottom: 27px
+        span
+            background-color: v.$blue
+            border: 
+                size: 0
+                radius: 3px
+            color: v.$white
+            font:
+                size: 14px
+                weight: 600
+            padding: 12px 120px
+            line-height: 24px
+            cursor: pointer
