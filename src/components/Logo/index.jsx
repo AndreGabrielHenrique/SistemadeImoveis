@@ -1,11 +1,12 @@
-// C:\MEGA\GPnet\Sistema de Imóveis\src\components\Logo\index.jsx
+// src/components/Logo/index.jsx
 import Logotipo from '../../assets/logo.png';
-import styles from './index.module.sass' // Importação do módulo
+import styles from './index.module.sass'
 
+// Componente de logo reutilizável
 const Logo = () => {
     return (
         <div className={styles.Container}>
-            <img src={Logotipo} alt="" />
+            <img src={Logotipo} alt="Logo Sistema de Imóveis" />
         </div>
     );
 };

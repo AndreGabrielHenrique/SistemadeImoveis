@@ -1,12 +1,50 @@
-// C:\MEGA\GPnet\Sistema de Imóveis\src\pages\Home\index.module.sass
+// src/pages/Home/index.module.sass
+@use '../../styles/variables' as v
+
 .Title
     display: flex
-    justify-content: flex-start
-    align-items: center
+    justify-content: flex-start  // Alinhamento à esquerda
     padding: 25px 150px
+    font-size: 2rem
+    color: v.$secondary
+    
+    // Responsividade progressiva
+    @media (max-width: 1200px)
+        padding: 25px 100px
+        font-size: 1.8rem
+
+    @media (max-width: 992px)
+        padding: 25px 50px
+        font-size: 1.6rem
+
+    @media (max-width: 768px)
+        padding: 25px 20px
+        font-size: 1.4rem
+        justify-content: center  // Centralização em mobile
+
+    @media (max-width: 480px)
+        font-size: 1.2rem
+        padding: 15px
+
 .Wrapper
     display: flex
     justify-content: space-between
-    align-items: center
-    flex-wrap: wrap
+    flex-wrap: wrap  // Quebra de linha automática
     padding: 25px 150px
+    gap: 20px  // Espaço entre cards
+    
+    @media (max-width: 1200px)
+        padding: 25px 100px
+        gap: 15px
+
+    @media (max-width: 992px)
+        padding: 25px 50px
+        justify-content: center  // Centralização em tablets
+
+    @media (max-width: 768px)
+        padding: 25px 20px
+        gap: 10px
+
+    @media (max-width: 480px)
+        padding: 15px
+        flex-direction: column  // Layout vertical

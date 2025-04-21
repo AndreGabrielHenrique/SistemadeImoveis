@@ -1,13 +1,15 @@
-// C:\MEGA\GPnet\Sistema de Imóveis\src\components\Banner\index.module.sass
+// src/components/Banner/index.module.sass
 @use '../../styles/variables' as v
 
 .Container
     padding: 200px 150px
     position: relative
     background:
-        size: cover
-        position: center
+        size: cover      // Cobrir toda a área do container
+        position: center // Centralizar imagem de fundo
         image: url(../../assets/backbone-visuals-oMB1rr7j-H8-unsplash.jpg)
+    
+    // Overlay escuro para melhor legibilidade do texto
     &::before
         background-color: rgba(0, 0, 0, .5)
         content: ''
@@ -17,20 +19,24 @@
         width: 100%
         height: 100%
         z-index: 1
+    
     article
         width: 55%
         position: relative
-        z-index: 1
-        h2
+        z-index: 1  // Garante que o conteúdo fique acima do overlay
+        
+        h2  // Estilização do título principal
             color: v.$white
             font:
                 size: 60px
                 weight: 700
             margin-bottom: 35px
-        p
+        
+        p  // Estilização do parágrafo descritivo
             color: v.$white
             margin-bottom: 27px
-        span
+        
+        span  // Estilização do botão CTA
             background-color: v.$blue
             border: 
                 size: 0
@@ -42,3 +48,37 @@
             padding: 12px 120px
             line-height: 24px
             cursor: pointer
+            display: inline-block
+
+    // Responsividade:
+    @media (max-width: 1200px)
+        padding: 150px 100px
+        article
+            width: 70%
+            h2
+                font-size: 50px
+
+    @media (max-width: 992px)
+        padding: 120px 50px
+        article
+            width: 85%
+            h2
+                font-size: 40px
+            p
+                font-size: 16px
+
+    @media (max-width: 768px)
+        padding: 100px 20px
+        article
+            width: 100%
+            text-align: center
+            h2
+                font-size: 32px
+                margin-bottom: 25px
+            p
+                font-size: 14px
+                margin-bottom: 20px
+            span
+                width: 100%
+                padding: 12px 20px
+                box-sizing: border-box

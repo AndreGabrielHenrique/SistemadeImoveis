@@ -4,7 +4,9 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import Logo from "../Logo";
 import Copyright from './Copyright';
 
+// Componente principal do rodapé com múltiplas seções
 const Footer = ({ onLinkClick }) => {
+    // Dados das seções dinâmicas
     const sections = [
         {
             title: 'Nossos Serviços',
@@ -23,10 +25,12 @@ const Footer = ({ onLinkClick }) => {
     return (
         <>
             <div className={styles.Container}>
+                {/* Seção do logo e redes sociais */}
                 <span>
                     <Logo />
                     <p>Site criado especialmente para desenvolvimento em React, Vite e SASS, sem fins comerciais.</p>
                     <nav>
+                        {/* Ícones de redes sociais interativos */}
                         <li>
                             <span><FaFacebook onClick={onLinkClick} size={32} /></span>
                         </li>
@@ -39,6 +43,7 @@ const Footer = ({ onLinkClick }) => {
                     </nav>
                 </span>
                 
+                {/* Geração dinâmica das seções */}
                 {sections.map((section) => (
                     <span key={section.title}>
                         <h3>{section.title}</h3>

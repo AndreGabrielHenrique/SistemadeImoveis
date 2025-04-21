@@ -7,9 +7,11 @@ import Home from './pages/Home';
 import Footer from './components/Footer';
 import Bubble from './components/Bubble';
 
+// Componente raiz da aplicação
 const App = () => {
   const [bubblePosition, setBubblePosition] = useState(null);
 
+  // Manipulador global de cliques em links
   const handleLinkClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -19,10 +21,11 @@ const App = () => {
 
     setBubblePosition({
       element,
-      direction: isCopyright ? 'up' : 'down'
+      direction: isCopyright ? 'up' : 'down'  // Lógica de posicionamento
     });
   };
 
+  // Fechar bubble ao clicar fora
   useEffect(() => {
     const closeBubble = () => setBubblePosition(null);
     document.addEventListener('click', closeBubble);

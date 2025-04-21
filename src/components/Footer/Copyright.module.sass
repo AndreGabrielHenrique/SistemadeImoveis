@@ -1,14 +1,36 @@
-// C:\MEGA\GPnet\Sistema de Imóveis\src\components\Footer\Copyright.module.sass
+// src/components/Footer/Copyright.module.sass
 .Container
     display: flex
     justify-content: space-between
     align-items: center
     padding: 20px 150px
-    border-top: 1px solid rgba(0, 0, 0, .1)
+    border-top: 1px solid rgba(0, 0, 0, .1)  // Linha separadora sutil
+    
+    // Estilização da lista de links
     ul
         display: flex
         align-items: center
-        li
-            span
-                margin-left: 15px
-                cursor: pointer
+        li span
+                margin-left: 15px  // Espaçamento entre links
+                cursor: pointer  // Indica interatividade
+                transition: opacity 0.2s ease
+                &:hover
+                    opacity: 0.8
+
+    // Responsividade:
+    @media (max-width: 1200px)
+        padding: 20px 100px
+
+    @media (max-width: 992px)
+        padding: 20px 50px
+        flex-direction: column  // Empilhamento vertical
+        gap: 15px  // Espaço entre elementos
+        text-align: center
+        ul
+            flex-wrap: wrap  // Quebra de linha para múltiplos links
+            justify-content: center
+
+    @media (max-width: 576px)
+        padding: 20px
+        ul li span
+            margin: 5px  // Redução de espaçamento em mobile

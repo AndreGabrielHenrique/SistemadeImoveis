@@ -1,4 +1,4 @@
-// C:\MEGA\GPnet\Sistema de Imóveis\src\components\Header\Menu.module.sass
+// src/components/Header/Menu.module.sass
 @use '../../styles/variables' as v
 
 .Container
@@ -11,12 +11,13 @@
                 size: 1px
                 style: solid 
                 color: v.$gray
-                radius: 10px
+                radius: 10px  // Bordas arredondadas
             padding: 10px
+            transition: all 0.2s ease  // Efeito hover suave
             span
                 font:
                     size: 1.2rem
                     weight: 300
             &:hover
-                background-color: v.$gray
+                background-color: v.$gray  // Feedback visual ao passar mouse
                 cursor: pointer

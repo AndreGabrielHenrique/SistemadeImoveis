@@ -1,11 +1,39 @@
-// C:\MEGA\GPnet\Sistema de Imóveis\src\components\Header\index.module.sass
+// src/components/Header/index.module.sass
 @use '../../styles/variables' as v
 
 .Container
-    padding: 45px 150px
-    height: 56px
+    padding: 45px 150px  // Espaçamento desktop
+    height: auto
     display: flex
-    justify-content: space-between
+    justify-content: space-between  // Alinhamento horizontal
     align-items: center
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)  // Linha separadora
     background-color: v.$white
+    transition: all 0.3s ease  // Transição suave para mudanças
+    
+    // Prevenção de redução do logo
+    > :first-child
+        flex-shrink: 0
+
+    // Responsividade:
+    @media (max-width: 1200px)
+        padding: 30px 100px
+
+    @media (max-width: 992px)
+        padding: 25px 50px
+        flex-wrap: wrap  // Permite quebra de linha
+        gap: 20px
+
+    @media (max-width: 768px)
+        padding: 20px
+        flex-direction: column  // Layout vertical
+        gap: 25px
+        img
+            width: 140px !important  // Redução do logo
+
+    @media (max-width: 480px)
+        padding: 15px
+        gap: 15px
+        nav ul
+            flex-direction: column  // Menu vertical
+            gap: 10px
